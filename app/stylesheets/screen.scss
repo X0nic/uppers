@@ -14,3 +14,43 @@
 @include blueprint;
 
 @include blueprint-scaffolding;
+
+
+@import "blueprint/debug";
+
+//$header-color: #1A63BE;
+//$primary-marketing-color: #4484D6;
+//$secondary-marketing-color: #92BCF8;
+
+$header-color: #03262C;
+$header-text-color: white;
+$primary-marketing-color: #1A63BE;
+$secondary-marketing-color: #4484D6;
+
+h1 {
+	color: $header-text-color;
+}
+
+#header {
+	background-color: $header-color;
+}
+
+#primary-marketing {
+	background-color: $primary-marketing-color;
+}
+
+#secondary-marketing {
+	background-color: $secondary-marketing-color;
+}
+
+#content {
+//  @include showgrid;
+  background-color: white;
+//  @include container;
+//  #header, #footer {
+//    @include column(24); }
+//  #sidebar {
+//    @include column(3); }
+//  #content {
+//    @include column(5, true); } 
+}
