@@ -49,14 +49,24 @@ h1 {
 	background-color: $secondary-marketing-color;
 }
 
+#footer {
+
+}
+
+#login {
+  border: 1px #CCC solid;
+  @include column(7);
+  //label {
+  //  background-color: red;
+  //}
+}
+
 #content {
-//  @include showgrid;
+  //@include showgrid;
+  padding: 20px;
   background-color: white;
-//  @include container;
-//  #header, #footer {
-//    @include column(24); }
-//  #sidebar {
-//    @include column(3); }
-//  #content {
-//    @include column(5, true); } 
+  #sidebar {
+    @include column(3); }
+  #content {
+    @include column(5, true); } 
 }
