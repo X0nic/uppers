@@ -10,6 +10,8 @@
 // Import the non-default scaffolding module.
 @import "blueprint/scaffolding";
 
+@import "fancy-buttons";
+
 // Generate the blueprint framework according to your configuration:
 @include blueprint;
 
@@ -55,10 +57,16 @@ h1 {
 
 #login {
   border: 1px #CCC solid;
+  padding: 20px;
   @include column(7);
-  //label {
+  label {
+    @include column(3);
   //  background-color: red;
-  //}
+  }
+}
+
+button {
+  @include fancy-button(#124c89, 26px, 1em, 4px);
 }
 
 #content {

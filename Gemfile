@@ -32,3 +32,4 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 
 gem "compass", ">= 0.10.6"
 gem 'haml'
+gem 'fancy-buttons'
