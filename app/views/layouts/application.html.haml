@@ -12,4 +12,11 @@
     #header
       .container
         %h1 Uppers
-      = yield
+
+    .notice
+      =notice
+
+    .error
+      =alert
+
+    = yield
