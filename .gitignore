@@ -5,3 +5,4 @@ tmp/**/*
 *.swp
 public/stylesheets/compiled/*
 .sass-cache
+.idea
