@@ -13,10 +13,16 @@
       .container
         %h1 Uppers
 
-    .notice
-      =notice
+    #primary-marketing
+      .container
+        %h2 test
 
-    .error
-      =alert
+    #secondary-marketing
+      .container
+        %h3 test
 
-    = yield
+    #content
+      .container
+        - flash.each do |key, value|
+          = content_tag(:div, value, :class => "flash #{key}")
+        = yield
