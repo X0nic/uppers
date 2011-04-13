@@ -45,10 +45,20 @@ h1
 #header
   background-color: $header-color
   .logo
-    background-color: red
-    +column(8)
   .site-nav
-    background-color: darken($header-color, 10)
+    margin-top: 15px
+    float: right
+    a
+      color: #eee
+      text-decoration: none
+      font-size: 110%
+      font-weight: bold
+      display: inline
+      padding: 5px 10px
+      margin-right: 20px
+      border-radius: 5px
+    a:hover, .selected
+      background-color: darken($header-color, 10)
 
 #primary-marketing
   background-color: $primary-marketing-color
