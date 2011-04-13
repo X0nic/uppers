@@ -30,10 +30,10 @@
 //$secondary-marketing-color: #4484D6;
 
 
-$header-color: #736258
+$header-color: #589a9f
 $header-text-color: white
-$primary-marketing-color: #589a9f
-$secondary-marketing-color: #bfb909
+$primary-marketing-color: #bfb909
+$secondary-marketing-color: #736258
 
 //$button-color: #124c89;
 $button-color: darken(#57b42c, 8)
@@ -44,12 +44,19 @@ h1
 
 #header
   background-color: $header-color
+  .logo
+    background-color: red
+    +column(8)
+  .site-nav
+    background-color: darken($header-color, 10)
 
 #primary-marketing
   background-color: $primary-marketing-color
 
 #secondary-marketing
   background-color: $secondary-marketing-color
+  h3
+    color: white
 
 #footer
 
