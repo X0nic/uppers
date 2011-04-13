@@ -73,6 +73,7 @@ h1
 #login
   border: 1px #CCC solid
   padding: 20px
+  margin: 20px
   +column(7)
   label
     +column(3)
@@ -82,12 +83,14 @@ h1
 button
   +fancy-button($button-color, 15px, 1em, 3px)
 
-
 #content
-  //@include showgrid;
   padding: 20px
+  //+showgrid
   background-color: white
-  #sidebar
-    +column(3)
-  #content
-    +column(5, true)
+  .container
+    border: 2px #CCC solid
+    
+.round
+  -moz-border-radius:    10px
+  -webkit-border-radius: 10px
+  border-radius:         10px
