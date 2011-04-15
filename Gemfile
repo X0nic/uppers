@@ -33,5 +33,5 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 gem "compass", ">= 0.10.6"
 gem 'haml'
 gem 'fancy-buttons'
-gem 'devise'
+gem 'devise', "1.2.1"
 #gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
