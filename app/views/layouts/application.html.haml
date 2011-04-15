@@ -26,7 +26,7 @@
         %h3 test
 
     #content
-      .container.round
+      .container
         - flash.each do |key, value|
           = content_tag(:div, value, :class => "flash #{key}")
         = yield
