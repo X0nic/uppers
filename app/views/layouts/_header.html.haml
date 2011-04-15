@@ -1,7 +1,9 @@
 #header
     .container
         .site-nav
-            = link_to "Home", root_path
+            = link_to_unless_current "Home", root_path do
+                = link_to "Home", root_path, :class => "selected"
             %a(href="#") Sign Up
-            = link_to "Login", login_path
+            = link_to_unless_current "Login", login_path do
+                = link_to "Login", login_path, :class => "selected"
         %h1.logo Uppers
