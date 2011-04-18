@@ -1,9 +1,7 @@
 Uppers::Application.routes.draw do
-  devise_for :users
+  devise_for :users, :path_name => { :sign_up => "register" }
 
   root :to => "home#index"
-
-  match '/login', :to => "home#login"
   resources :home
 
   # The priority is based upon order of creation:
