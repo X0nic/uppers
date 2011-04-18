@@ -35,3 +35,7 @@ gem 'haml'
 gem 'fancy-buttons'
 gem 'devise', "1.2.1"
 #gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
+
+group :development do
+  gem "erb2haml"
+end
