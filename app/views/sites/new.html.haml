@@ -1,0 +1,16 @@
+#content-box
+  = form_for(@site) do |f|
+    = render 'shared/error_messages', :object => f.object
+    .step
+      .one
+        1
+      .title
+        Enter Site to Watch:
+        = f.text_field :uri
+    .step
+      .two
+        2
+      .title
+        Enter Email Address to Notify:
+        = f.text_field :email
+    %button Go
