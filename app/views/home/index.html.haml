@@ -12,17 +12,27 @@
 //  eiusmod tempor incididunt ut labore et
 //  dolore magna aliqua.
 
-#content-box
+#watch.content-box
   .step
-    .one
-      1
-    .title
-      Enter Site to Watch:
-    %input
+    .text
+      .one
+        1
+      .title
+        Enter Site to Watch:
+    .value
+      %input
+      .description
+        What website would you like us to watch?
   .step
-    .two
-      2
-    .title
-      Enter Email Address to Notify:
-    %input
-  %button Go
+    .text
+      .two
+        2
+      .title
+        Enter Email Address to Notify:
+    .value
+      %input
+      .description
+        We need your email address to tell you when your site is down
+  .step
+    .last
+      %button Go
