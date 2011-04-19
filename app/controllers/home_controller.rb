@@ -1,7 +1,5 @@
 class HomeController < ApplicationController
   def index
-  end
-
-  def login
+    @title = "Welcome"
   end
 end

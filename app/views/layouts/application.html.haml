@@ -1,11 +1,13 @@
 !!! html5
 %html
   %head
-    = render 'layouts/stylesheets'
-
-    %title Hello!
-    = javascript_include_tag :defaults
     = csrf_meta_tag
+    = render 'layouts/stylesheets'
+    = javascript_include_tag :defaults
+
+    %title
+      = title
+
   %body
     = render 'layouts/header'
 

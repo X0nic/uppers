@@ -3,6 +3,7 @@ class SitesController < ApplicationController
   end
 
   def new
+    @title = "Watch Site"
     @site = Site.new
   end
 
