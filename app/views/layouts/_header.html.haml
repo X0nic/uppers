@@ -1,14 +1,18 @@
 #header
-    .container
-        .site-nav
-            = link_to_unless_current "Home", root_path do
-                = link_to "Home", root_path, :class => "selected"
-            - if user_signed_in?
-                = link_to "Sign out", destroy_user_session_path
-            - else
-                = link_to_unless_current "Register", new_user_registration_path do
-                    = link_to "Register", new_user_registration_path, :class => "selected"
+  .container
+    .site-nav
+      = link_to_unless_current "Home", root_path do
+        = link_to "Home", root_path, :class => "selected"
+      - if user_signed_in?
+        = link_to "Sign out", destroy_user_session_path
+      - else
+        = link_to_unless_current "Register", new_user_registration_path do
+          = link_to "Register", new_user_registration_path, :class => "selected"
 
-                = link_to_unless_current "Sign in", new_user_session_path do
-                    = link_to "Sign in", new_user_session_path, :class => "selected"
-        %h1.logo Uppers
+        = link_to_unless_current "Sign in", new_user_session_path do
+          = link_to "Sign in", new_user_session_path, :class => "selected"
+    %h1.logo Uppers
+
+  = render 'layouts/marketing'
+
+

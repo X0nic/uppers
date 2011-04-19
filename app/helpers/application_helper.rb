@@ -7,4 +7,11 @@ module ApplicationHelper
       "#{base_title} | #{@title}"
     end
   end
+
+  def show_marketing?
+    if @show_marketing.nil?
+      @show_marketing = false
+    end
+    @show_marketing
+  end
 end
