@@ -70,7 +70,8 @@ h1
     color: white
 
 #footer
-
+  margin-top: 20px
+  
 #login
   border: 1px #CCC solid
   padding: 20px
@@ -78,24 +79,28 @@ h1
   label
     +column(3)
 
+#watch
+  +column(14)
+
 
 button
   +fancy-button($button-color, 15px, 1em, 3px)
+  
+fieldset
+  background-color: white
+  +border-radius(5px)
 
 #content
   background-color: white
 
-#content-box
+.content-box
   border: 1px #ccc solid
   padding: 20px 10px
   +border-radius(5px)
-  +column(10)
   +linear-gradient(color-stops(white,#ddd))
-  fieldset
-    background-color: white
-    +border-radius(5px)
 
 .step
+  padding-bottom: 15px
   .one, .two
     font-size: 170%
     font-weight: bold
@@ -103,5 +108,11 @@ button
   .title
     font-size: 130%
     font-weight: bold
-  button
-    align: right
+  .text
+    +clearfix
+  .value
+    +prepend(1)
+    input
+      +column(4)
+  .last
+    +prepend(12)

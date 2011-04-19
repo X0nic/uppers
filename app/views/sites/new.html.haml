@@ -1,16 +1,51 @@
-#content-box
+#watch.content-box
   = form_for(@site) do |f|
     = render 'shared/error_messages', :object => f.object
     .step
+      .text
+        .one
+          1
+        .title
+          Enter Site to Watch:
+      .value
+        = f.text_field :uri
+        .description
+          What website would you like us to watch?
+    .step
+      .text
+        .two
+          2
+        .title
+          Enter Email Address to Notify:
+      .value
+        = f.text_field :email
+        .description
+          We need your email address to tell you when your site is down
+    .step
+      .last
+        %button Go
+
+#watch.content-box
+  .step
+    .text
       .one
         1
       .title
         Enter Site to Watch:
-        = f.text_field :uri
-    .step
+    .value
+      %input
+      .description
+        What website would you like us to watch?
+  .step
+    .text
       .two
         2
       .title
         Enter Email Address to Notify:
-        = f.text_field :email
-    %button Go
+    .value
+      %input
+      .description
+        We need your email address to tell you when your site is down
+  .step
+    .last
+      %button Go
