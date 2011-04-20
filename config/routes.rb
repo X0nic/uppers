@@ -7,6 +7,7 @@ Uppers::Application.routes.draw do
 
   match '/watch', :to => 'sites#new'
   match '/ping', :to => 'sites#ping'
+  match '/mysite', :to => 'sites#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

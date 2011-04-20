@@ -50,4 +50,10 @@ describe Site do
       valid_uri_site.should_not be_valid
     end
   end
+
+  it "should generate a temp id" do
+    site = Site.new(@attr)
+    site.temp_id.should_not be_nil
+    site.temp_id.length.should equal 40
+  end
 end

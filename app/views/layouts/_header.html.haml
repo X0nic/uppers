@@ -3,6 +3,8 @@
     .site-nav
       = link_to_unless_current "Home", root_path do
         = link_to "Home", root_path, :class => "selected"
+      = link_to_unless_current "My Site", mysite_path do
+        = link_to "My Site", mysite_path, :class => "selected"
       - if user_signed_in?
         = link_to "Sign out", destroy_user_session_path
       - else
