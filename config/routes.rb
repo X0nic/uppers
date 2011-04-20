@@ -6,6 +6,7 @@ Uppers::Application.routes.draw do
   resources :home
 
   match '/watch', :to => 'sites#new'
+  match '/ping', :to => 'sites#ping'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

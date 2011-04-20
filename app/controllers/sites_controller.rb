@@ -10,10 +10,17 @@ class SitesController < ApplicationController
   def create
     @site = Site.new(params[:site])
     if @site.save
-      flash[:success] = "Your site is being watched by Uppers"
-      redirect_to root_path
+      render 'ping'
     else
       render 'new'
     end
+  end
+
+  def ping
+    
+  end
+
+  def mail
+
   end
 end
