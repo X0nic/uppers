@@ -38,14 +38,9 @@ describe SitesController do
           end.should change(Site, :count).by(1)
       end
 
-      it "should redirect to the home index page" do
+      it "should redirect to the pinging page" do
         post :create, :site => @attr
-        response.should redirect_to(root_path)
-      end
-
-      it "should have a watching message" do
-        post :create, :site => @attr
-        flash[:success].should =~ /Your site is being watched by Uppers/i
+        response.should render_template('ping')
       end
     end
 end
