@@ -54,6 +54,14 @@ describe Site do
   it "should generate a temp id" do
     site = Site.new(@attr)
     site.temp_id.should_not be_nil
-    site.temp_id.length.should equal 40
+    site.temp_id.length.should == 40
+  end
+
+  it "should not change temp id when pulled out of db" do
+    site = Site.new(@attr)
+    site.save
+
+    new_site = Site.find(site.id)
+    new_site.temp_id.should == site.temp_id
   end
 end
