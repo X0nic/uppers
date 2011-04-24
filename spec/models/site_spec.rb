@@ -53,6 +53,8 @@ describe Site do
 
   it "should generate a temp id" do
     site = Site.new(@attr)
+    site.save
+    
     site.temp_id.should_not be_nil
     site.temp_id.length.should == 40
   end
