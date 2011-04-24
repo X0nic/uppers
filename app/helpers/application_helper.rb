@@ -14,4 +14,8 @@ module ApplicationHelper
     end
     @show_marketing
   end
+
+  def has_site?
+    cookies[:ticket].nil? == false
+  end
 end

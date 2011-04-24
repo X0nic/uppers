@@ -1,5 +1,6 @@
 class SitesController < ApplicationController
   def index
+    @site = Site.find_by_temp_id(cookies[:ticket])
   end
 
   def new
@@ -10,6 +11,7 @@ class SitesController < ApplicationController
   def create
     @site = Site.new(params[:site])
     if @site.save
+      cookies.permanent[:ticket] = @site.temp_id
       render 'ping'
     else
       render 'new'

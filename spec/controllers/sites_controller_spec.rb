@@ -34,13 +34,18 @@ describe SitesController do
 
       it "should create a site to watch" do
         lambda do
-          post :create, :site => @attr
+            post :create, :site => @attr
           end.should change(Site, :count).by(1)
       end
 
       it "should redirect to the pinging page" do
         post :create, :site => @attr
         response.should render_template('ping')
+      end
+
+      it "should create a cookie" do
+        post :create, :site => @attr
+        cookies["ticket"].should_not be_nil
       end
     end
 end

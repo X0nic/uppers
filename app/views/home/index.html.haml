@@ -13,4 +13,7 @@
 //  dolore magna aliqua.
 
 #content-box
-  = link_to "Have us watch your site now!", watch_path
+  - if has_site?
+    = link_to "We are watching you!", mysite_path
+  - else
+    = link_to "Have us watch your site now!", watch_path
