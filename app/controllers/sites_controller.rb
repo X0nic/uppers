@@ -25,8 +25,16 @@ class SitesController < ApplicationController
     @site = Site.find_by_temp_id(cookies[:ticket])
 
     begin # check header response
-      case Net::HTTP.get_response(URI.parse(@site.uri))
+      uri = URI.parse(@site.uri)
+      http = Net::HTTP.new(uri.host, uri.port)
+
+      http.use_ssl = true if uri.scheme == 'https'
+
+      request = Net::HTTP::Get.new(uri.request_uri)
+      response = http.request(request)
+      case response
         when Net::HTTPSuccess then flash[:success] = "Found your site!"
+        when Net::HTTPRedirection then flash[:success] = "Told off to go somewhere!"
         else flash[:error] = "Brokens"
       end
     rescue => e
