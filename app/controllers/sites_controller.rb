@@ -1,4 +1,4 @@
-require 'net/http'
+require 'mechanize'
 
 class SitesController < ApplicationController
   def index
@@ -25,21 +25,11 @@ class SitesController < ApplicationController
     @site = Site.find_by_temp_id(cookies[:ticket])
 
     begin # check header response
-      uri = URI.parse(@site.uri)
-      http = Net::HTTP.new(uri.host, uri.port)
-
-      http.use_ssl = true if uri.scheme == 'https'
-
-      request = Net::HTTP::Get.new(uri.request_uri)
-      response = http.request(request)
+      agent = Mechanize.new
+      response = agent.get(@site.uri)
 
       @site.update_attributes(:code => response.code)
-
-      case response
-        when Net::HTTPSuccess then flash[:success] = "Found your site!"
-        when Net::HTTPRedirection then flash[:success] = "Told off to go somewhere!"
-        else flash[:error] = "Brokens"
-      end
+      flash[:success] = "Found your site! #{response.uri}"
     rescue => e
       flash[:error] = "errors: #{e}"
     end

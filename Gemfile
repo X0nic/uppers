@@ -34,6 +34,7 @@ gem "compass", ">= 0.10.6"
 gem 'haml'
 gem 'fancy-buttons'
 gem 'devise', "1.2.1"
+gem 'mechanize'
 #gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
 
 group :development do
