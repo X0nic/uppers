@@ -29,7 +29,7 @@ describe SitesController do
 
   describe "success" do
       before(:each) do
-        @attr = {:uri => "http://www.uppers.com", :email => "username@uppers.com"}
+        @attr = {:uri => "http://www.uppers.com", :email => "username@uppers.com", :code => 200}
       end
 
       it "should create a site to watch" do
@@ -40,7 +40,7 @@ describe SitesController do
 
       it "should redirect to the pinging page" do
         post :create, :site => @attr
-        response.should render_template('ping')
+        response.should render_template('index')
       end
 
       it "should create a cookie" do

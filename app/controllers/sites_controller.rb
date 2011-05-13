@@ -32,6 +32,9 @@ class SitesController < ApplicationController
 
       request = Net::HTTP::Get.new(uri.request_uri)
       response = http.request(request)
+
+      @site.update_attributes(:code => response.code)
+
       case response
         when Net::HTTPSuccess then flash[:success] = "Found your site!"
         when Net::HTTPRedirection then flash[:success] = "Told off to go somewhere!"
@@ -40,7 +43,6 @@ class SitesController < ApplicationController
     rescue => e
       flash[:error] = "errors: #{e}"
     end
-
 
     redirect_to mysite_path
   end

@@ -1,7 +1,7 @@
 require 'digest'
 
 class Site < ActiveRecord::Base
-  attr_accessible :uri, :email, :temp_id
+  attr_accessible :uri, :email, :temp_id, :code
 
   before_save :generate_temp_id
 
