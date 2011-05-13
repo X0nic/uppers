@@ -66,4 +66,14 @@ describe Site do
     new_site = Site.find(site.id)
     new_site.temp_id.should == site.temp_id
   end
+
+  it "should not change the temp id when saved to" do
+    site = Site.new(@attr)
+    site.save
+
+    temp_id = site.temp_id
+    site.save
+
+    site.temp_id.should == temp_id
+  end
 end

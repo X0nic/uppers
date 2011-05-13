@@ -15,7 +15,7 @@ class Site < ActiveRecord::Base
                   :format => {:with => uri_regex}
 
   def generate_temp_id
-    self.temp_id = Digest::SHA1.hexdigest(Time.now.to_s.split(//).sort_by{rand}.join)
+    self.temp_id ||= Digest::SHA1.hexdigest(Time.now.to_s.split(//).sort_by{rand}.join)
   end
   
 end
