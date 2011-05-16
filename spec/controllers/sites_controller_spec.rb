@@ -40,7 +40,7 @@ describe SitesController do
 
       it "should redirect to the pinging page" do
         post :create, :site => @attr
-        response.should render_template('index')
+        response.should redirect_to(ping_path)
       end
 
       it "should create a cookie" do
