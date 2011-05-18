@@ -1,5 +1,3 @@
-require 'mechanize'
-
 class SitesController < ApplicationController
   def index
     @site = Site.find_by_temp_id(cookies[:ticket])
@@ -25,11 +23,10 @@ class SitesController < ApplicationController
     @site = Site.find_by_temp_id(cookies[:ticket])
 
     begin # check header response
-      agent = Mechanize.new
-      response = agent.get(@site.uri)
+      @site.ping
+      @site.save
 
-      @site.update_attributes(:code => response.code)
-      flash[:success] = "Found your site! #{response.uri}"
+      flash[:success] = "Found your site! #{@site.uri} (#{@site.code})"
     rescue => e
       flash[:error] = "errors: #{e}"
     end

@@ -18,5 +18,12 @@ class Site < ActiveRecord::Base
   def generate_temp_id
     self.temp_id ||= Digest::SHA1.hexdigest(Time.now.to_s.split(//).sort_by{rand}.join)
   end
-  
+
+  def ping
+      agent = Mechanize.new
+      response = agent.get(self.uri)
+
+      #self.uri = response.uri
+      self.code = response.code
+  end
 end
