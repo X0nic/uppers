@@ -20,10 +20,11 @@ class Site < ActiveRecord::Base
   end
 
   def ping
-      agent = Mechanize.new
-      response = agent.get(self.uri)
+    logger.info "pinging site #{self.uri}"
+    agent = Mechanize.new
+    response = agent.get(self.uri)
 
-      #self.uri = response.uri
-      self.code = response.code
+    #self.uri = response.uri
+    self.code = response.code
   end
 end
