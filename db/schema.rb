@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110516141849) do
+ActiveRecord::Schema.define(:version => 20110518013430) do
 
   create_table "rails_admin_histories", :force => true do |t|
     t.string   "message"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(:version => 20110516141849) do
     t.datetime "checked_date"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "site_id"
   end
 
   create_table "sites", :force => true do |t|

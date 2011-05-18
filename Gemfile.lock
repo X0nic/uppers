@@ -44,6 +44,10 @@ GEM
       ruby_parser
     erubis (2.6.6)
       abstract (>= 1.0.0)
+    factory_girl (1.3.3)
+    factory_girl_rails (1.0)
+      factory_girl (~> 1.3)
+      rails (>= 3.0.0.beta4)
     fancy-buttons (1.0.6)
       compass (= 0.10.6)
     haml (3.0.25)
@@ -112,6 +116,7 @@ DEPENDENCIES
   compass (>= 0.10.6)
   devise (= 1.2.1)
   erb2haml
+  factory_girl_rails (= 1.0)
   fancy-buttons
   haml
   mechanize
