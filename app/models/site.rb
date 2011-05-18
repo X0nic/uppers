@@ -20,11 +20,18 @@ class Site < ActiveRecord::Base
   end
 
   def ping
-    logger.info "pinging site #{self.uri}"
+    logger.info "pinging site ##{self.id} #{self.uri}"
     agent = Mechanize.new
     response = agent.get(self.uri)
 
     #self.uri = response.uri
     self.code = response.code
+  end
+
+  def self.ping_all
+    Site.all.each do |s|
+      logger.info "pinging #{s}"
+      s.delay.ping
+    end
   end
 end
