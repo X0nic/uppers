@@ -35,6 +35,7 @@ gem 'haml'
 gem 'fancy-buttons'
 gem 'devise', "1.2.1"
 gem 'mechanize'
+gem 'delayed_job'
 #gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
 
 group :development do
