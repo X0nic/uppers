@@ -26,6 +26,7 @@ class Site < ActiveRecord::Base
 
     #self.uri = response.uri
     self.code = response.code
+    self.save
   end
 
   def self.ping_all

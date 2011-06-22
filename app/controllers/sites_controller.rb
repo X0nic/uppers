@@ -23,8 +23,8 @@ class SitesController < ApplicationController
     @site = Site.find_by_temp_id(cookies[:ticket])
 
     begin # check header response
-      @site.ping
-      @site.save
+      @site.delay.ping
+      #@site.save
 
       flash[:success] = "Found your site! #{@site.uri} (#{@site.code})"
     rescue => e
