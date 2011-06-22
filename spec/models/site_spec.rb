@@ -76,4 +76,15 @@ describe Site do
 
     site.temp_id.should == temp_id
   end
+
+  describe "site_histories associations" do
+
+    before(:each) do
+      @site = Site.create(@attr)
+    end
+
+    it "should have a site_histories attribute" do
+      @site.should respond_to(:site_histories)
+    end
+  end
 end
